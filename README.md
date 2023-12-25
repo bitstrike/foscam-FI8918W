@@ -61,7 +61,7 @@ Control your Foscam camera using CGI commands through this Python script.
 - For more information on available commands and usage, run:
 
     ```bash
-    python foscam.py --help
+    python3 foscam.py --help
     ```
 
 ## License
