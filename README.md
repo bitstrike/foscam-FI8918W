@@ -35,6 +35,18 @@ Control your Foscam camera using CGI commands through this Python script.
     - `move_down` - Move Down
     - `move_left` - Move Left
     - `move_right` - Move Right
+    - `reset` -
+    - `move_up_right` -
+    - `move_down_right` -
+    - `move_up_left` -
+    - `move_down_left` -
+    - `stop` -
+    - `set_preset` -
+    - `goto_preset` -
+    - `iron` -
+    - `iroff` -
+    - `reboot` -
+
     - ... (list other available commands)
 
 4. Optional Arguments:
