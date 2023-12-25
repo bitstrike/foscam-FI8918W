@@ -13,33 +13,35 @@ class Foscam:
         self.session = requests.Session()
 
     def help(self):
-        print("Foscam Controller Help:")
-        print("-" * 40)
-        print("Command line arguments:")
-        print("  -a, --monitor-address   IP address or hostname of the Foscam camera.")
-        print("  -u, --username         Foscam camera username.")
-        print("  -p, --password         Foscam camera password.")
-        print("  -c, --command          Command to send to the camera.")
-        print("  -s, --preset           Preset value for set_preset command")
-        print("  -n, --iterations       Number of times to execute the command (default: 1)")
-        print()
-        print("Available Commands:")
-        print("  reset                 - Reset Camera")
-        print("  move_up               - Move Up")
-        print("  move_down             - Move Down")
-        print("  move_left             - Move Left")
-        print("  move_right            - Move Right")
-        print("  move_up_right         - Diagonally Up Right")
-        print("  move_down_right       - Diagonally Down Right")
-        print("  move_up_left          - Diagonally Up Left")
-        print("  move_down_left        - Diagonally Down Left")
-        print("  stop                  - Stop Movement")
-        print("  set_preset <num>      - Set Preset (e.g., set_preset 1)")
-        print("  goto_preset <num>     - Go to Preset (e.g., goto_preset 1)")
-        print("  iron                  - Turn IR On (Wake)")
-        print("  iroff                 - Turn IR Off (Sleep)")
-        print("  reboot                - Reboot Camera")
-        sys.exit()
+        help_text = """
+        Foscam Controller Help:
+        --------------------------------------
+        Command line arguments:
+          -a, --monitor-address   IP address or hostname of the Foscam camera.
+          -u, --username          Foscam camera username.
+          -p, --password          Foscam camera password.
+          -c, --command           Command to send to the camera.
+          -s, --preset            Preset value for set_preset command
+          -n, --iterations        Number of times to execute the command (default: 1)
+
+        Available Commands:
+          reset                  - Reset Camera
+          move_up                - Move Up
+          move_down              - Move Down
+          move_left              - Move Left
+          move_right             - Move Right
+          move_up_right          - Diagonally Up Right
+          move_down_right        - Diagonally Down Right
+          move_up_left           - Diagonally Up Left
+          move_down_left         - Diagonally Down Left
+          stop                   - Stop Movement
+          set_preset <num>       - Set Preset (e.g., set_preset 1)
+          goto_preset <num>      - Go to Preset (e.g., goto_preset 1)
+          iron                   - Turn IR On (Wake)
+          iroff                  - Turn IR Off (Sleep)
+          reboot                 - Reboot Camera
+        """
+        return help_text
 
     def db(self, line):
         print(f"DEBUG: {line}")
@@ -134,6 +136,10 @@ def main():
         username=args.username,
         password=args.password
     )
+
+    if args.command.lower() == "help":
+        print(foscam.help())
+        sys.exit()
 
     command_functions = {
         'reset': foscam.camera_reset,
