@@ -5,7 +5,7 @@ Control your Foscam camera using CGI commands through this Python script.
 ## Prerequisites
 
 - Python 3.x
-- Required Python packages: `argparse`, `requests`
+- Required Python packages: `argparse`, `requests`, `base64`, `requests`
 
 ## Usage
 
@@ -19,13 +19,13 @@ Control your Foscam camera using CGI commands through this Python script.
 2. Run the script:
 
     ```bash
-    python foscam.py -a <monitor_address> -u <username> -p <password> -c <command>
+    python3 foscam.py -a <monitor_address> -u <username> -p <password> -c <command>
     ```
 
     Example:
 
     ```bash
-    python foscam.py -a 192.168.1.1 -u admin -p admin -c move_up
+    python3 foscam.py -a 192.168.1.1 -u admin -p admin -c move_up
     ```
 
 3. Available Commands:
@@ -46,8 +46,6 @@ Control your Foscam camera using CGI commands through this Python script.
     - `iron` -
     - `iroff` -
     - `reboot` -
-
-    - ... (list other available commands)
 
 4. Optional Arguments:
 
