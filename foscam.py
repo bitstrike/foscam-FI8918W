@@ -99,10 +99,10 @@ class Foscam:
         for _ in range(iterations):
             self.send_cmd(f"decoder_control.cgi?command={preset_cmd}&preset={preset_value}")
 
-    def iron(self):
+    def iron (self, preset_value=1, iterations=1):
         self.send_cmd("decoder_control.cgi?command=95&")
 
-    def iroff(self):
+    def iroff (self, preset_value=1, iterations=1):
         self.send_cmd("decoder_control.cgi?command=94&")
 
     def camera_reset(self):
