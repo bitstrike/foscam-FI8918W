@@ -55,39 +55,39 @@ class Foscam:
 
     def move_up(self, preset_value=1, iterations=1):
         for _ in range(iterations):
-            self.send_cmd(f"decoder_control.cgi?command=0&onestep=1&preset={preset_value}")
+            self.send_cmd(f"decoder_control.cgi?command=0&onestep=1")
 
     def move_up_right(self, preset_value=1, iterations=1):
         for _ in range(iterations):
-            self.send_cmd(f"decoder_control.cgi?command=90&onestep=1&preset={preset_value}")
+            self.send_cmd(f"decoder_control.cgi?command=90&onestep=1")
 
     def move_up_left(self, preset_value=1, iterations=1):
         for _ in range(iterations):
-            self.send_cmd(f"decoder_control.cgi?command=91&preset={preset_value}")
+            self.send_cmd(f"decoder_control.cgi?command=91")
 
     def move_down(self, preset_value=1, iterations=1):
         for _ in range(iterations):
-            self.send_cmd(f"decoder_control.cgi?command=2&onestep=3&preset={preset_value}")
+            self.send_cmd(f"decoder_control.cgi?command=2&onestep=3")
 
     def move_right(self, preset_value=1, iterations=1):
         for _ in range(iterations):
-            self.send_cmd(f"decoder_control.cgi?command=4&onestep=5&preset={preset_value}")
+            self.send_cmd(f"decoder_control.cgi?command=4&onestep=5")
 
     def move_left(self, preset_value=1, iterations=1):
         for _ in range(iterations):
-            self.send_cmd(f"decoder_control.cgi?command=6&onestep=7&preset={preset_value}")
+            self.send_cmd(f"decoder_control.cgi?command=6&onestep=7")
 
     def move_down_right(self, preset_value=1, iterations=1):
         for _ in range(iterations):
-            self.send_cmd(f"decoder_control.cgi?command=92&onestep=1&preset={preset_value}")
+            self.send_cmd(f"decoder_control.cgi?command=92&onestep=1")
 
     def move_down_left(self, preset_value=1, iterations=1):
         for _ in range(iterations):
-            self.send_cmd(f"decoder_control.cgi?command=93&preset={preset_value}")
+            self.send_cmd(f"decoder_control.cgi?command=93")
 
     def move_stop(self, preset_value=1, iterations=1):
         for _ in range(iterations):
-            self.send_cmd(f"decoder_control.cgi?command=1&preset={preset_value}")
+            self.send_cmd(f"decoder_control.cgi?command=1")
 
     def set_preset (self, preset_value=1, iterations=1):
         preset_cmd = 30 + (preset_value * 2)
